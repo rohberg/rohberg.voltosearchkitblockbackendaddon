@@ -1,6 +1,7 @@
 """Init and utils."""
-import logging
 from zope.i18nmessageid import MessageFactory
+
+import logging
 
 
 PACKAGE_NAME = "rohberg.voltosearchkitblockbackendaddon"
