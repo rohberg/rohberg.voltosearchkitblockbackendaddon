@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="rohberg.voltosearchkitblockbackendaddon"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="rohberg.volto-searchkit-block-backend-addon: Install"
+      description="Package to configure a new rohberg.volto-searchkit-block-backend-addon site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="rohberg.volto-searchkit-block-backend-addon: Uninstall"
+      description="Uninstall rohberg.volto-searchkit-block-backend-addon setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="rohberg.voltosearchkitblockbackendaddon"
+      />
+
+
+  <include package=".upgrades" />
+
+</configure>
